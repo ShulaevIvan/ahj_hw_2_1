@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack serve --config webpack.prod.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "lint": "eslint --ext .js --ignore-path .eslintignore .gitignore .",
     "test": "jest",
     "coverage": "jest --coverage",
     "preshow:coverage": "npm run coverage",
