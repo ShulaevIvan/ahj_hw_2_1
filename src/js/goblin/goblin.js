@@ -16,9 +16,9 @@ export default class Goblin {
   getRandomPosition() {
     const goblin = document.querySelector('.goblin');
     this.randomPosition = Math.floor(
-      Math.random() * (this.positions[this.positions.length - 1] - this.positions[0]),
+      Math.random() * (this.positions[this.positions.length - 1] - this.positions[0] + 1),
     );
-    if (goblin && this.randomPosition === goblin.getAttribute('position')) {
+    if (goblin && Number(this.randomPosition) === Number(goblin.getAttribute('position'))) {
       this.getRandomPosition();
     }
     return this.randomPosition;
@@ -28,7 +28,7 @@ export default class Goblin {
     let targetPos = this.getRandomPosition();
     this.items.forEach((item) => item.classList.remove('goblin'));
     this.items.forEach((item) => {
-      if (item.getAttribute('position') === this.randomPosition) {
+      if (Number(item.getAttribute('position')) === Number(this.randomPosition)) {
         targetPos = item.getAttribute('position');
       }
     });
